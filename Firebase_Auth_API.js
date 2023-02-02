@@ -39,6 +39,7 @@ function login() {
     })
     .catch(function(error) {
       console.error("Login failed:", error.message);
+      document.getElementById("error-message").innerHTML = error.message;
       window.location.replace("login.html");
     });
 }
@@ -59,6 +60,7 @@ function signUp() {
     })
     .catch(function(error) {
       console.error("Sign up failed:", error.message);
+      document.getElementById("error-message").innerHTML = error.message;
     });
 }
 // Logout event listener
