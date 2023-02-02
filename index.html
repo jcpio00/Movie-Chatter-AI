@@ -1,4 +1,4 @@
-<!-- (Old note) While this is currently just an html sheet, we should be create a session
+<!-- While this is currently just an html sheet, we should be create a session
 check upon launching the website. For example, if someone attempts to access
 this page before logging in, they should be redirected to  the login page. As
 a stretch goal, if administrator accounts are necessary, it would be best to
@@ -9,7 +9,9 @@ redirected to the sign in page. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Chatter AI</title>
     <link rel="stylesheet" href="global.css">
 </head>
@@ -29,7 +31,7 @@ redirected to the sign in page. -->
             <div class="main-nav">
                 <a href="">TV Shows</a>
                 <a href="">Movies</a>
-                <!-- possibley replace with search icon on smaller screens -->
+                <!-- possible replace with search icon on smaller screens -->
                 <input type="text" placeholder="Search" id="search-bar">
             </div>
             <div class="account-nav">
@@ -71,5 +73,8 @@ redirected to the sign in page. -->
 </body>
 <footer>
     <!-- was unsure what to put in the footer -->
+    <span id="copyright">
+        &copy; Team 18
+    </span>
 </footer>
 </html>
