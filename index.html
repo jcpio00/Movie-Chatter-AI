@@ -1,55 +1,80 @@
+<!-- While this is currently just an html sheet, we should be create a session
+check upon launching the website. For example, if someone attempts to access
+this page before logging in, they should be redirected to  the login page. As
+a stretch goal, if administrator accounts are necessary, it would be best to
+check whether it is an administrator account or not during this session check.
+As another stretch goal, allow users to continue as a guest after being
+redirected to the sign in page. -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MOVIE CHATTER AI </title>
-  </head>
-  <body>
+    <title>Movie Chatter AI</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
     <header>
-      <img src="LOGO IMAGE GOES HERE" 
-      alt="MOVIE CHATTER logo" 
-      id="logo"
-     />
-      <nav>
-        <ul>
-          <li><a href="./index.html"> Home </a></li>
-          <li><a href="./x.html"> Movie Chatter </a></li>
-          <li><a href="./portfolio.html"> Blog </a></li>
-        </ul>
-      </nav>
-      <div id="account" class="flex-center">
-        <button id="login" > SIGN IN </button>
-      </div>
-      <div id="burger" class="flex-center">
-        <button id="burgerOpen" >Burger</button>
-      </div>
+        <!-- separated the nav into sections to allow easier mobile alterations in css -->
+        <nav>
+            <div class="home-nav">
+                <a href="index.html">Movie Chatter AI</a>
+            </div>
+            <!-- To be discussed with group, separated to allow the use of a logo.
+            I thought using a more compact logo might be better for smaller screens.
+            On larger screens, this can be kept, moved to another location, or hidden.
+            <div class="logo-nav">
+                <a href="index.html"><img src="" alt="Movie Chatter AI Logo"></a>
+            </div> -->
+            <div class="main-nav">
+                <a href="">TV Shows</a>
+                <a href="">Movies</a>
+                <!-- possible replace with search icon on smaller screens -->
+                <input type="text" placeholder="Search" id="search-bar">
+            </div>
+            <div class="account-nav">
+                <a href="">Account</a>
+            </div>
+        </nav>
     </header>
     <main>
-      <div class="container">
-        <img src="BACKGROUND IMAGE GOES HERE" 
-        alt=" Background Image" 
-        id="hero"/>
-        <section class="flex-center flex-column">
-          <h2> About Us! </h2>
-          <p>
-            This is a section of where we talk about our app which is pretty great. For example, the spec says:
-          </p>
-          <blockquote>
-            Leverage is a model app to be developed during in-class instructor demos.
-            Leverage allows its users to track stock and crypto trades, simulating trading on the markets, with zero risk but possible nonfungible reward.
-          </blockquote>
-        <section>
-      </div>
+        <h3 id="call-to-action">Chat with us to find your next binge-ing experience!</h3>
+        <!-- temporary example categories sorting menu for css purposes
+        I made the list long for easier testing of scrolling menu -->
+        <ul class="categories-menu">
+            <li>Featured</li>
+            <li>Recent Releases</li>
+            <li>Popular</li>
+            <li>A-Z</li>
+            <li>My List</li>
+            <li>Rewatch</li>
+            <li>Kids</li>
+            <li>Action</li>
+            <li>Comedy</li>
+            <li>Romance</li>
+            <li>Musical</li>
+            <li>Drama</li>
+            <li>Thriller</li>
+            <li>Horror</li>
+            <li>Crime</li>
+            <li>Documentaries</li>
+            <li>Fantasy</li>
+            <li>Sci-Fi</li>
+            <li>Animation</li>
+            <li>Fiction</li>
+            <li>Non-Fiction</li>
+        </ul>
+        <!-- Category Title, Featured page as default, taken from database based on what is currently searched -->
+        <h1>Featured</h1>
+        <!-- list of movies-->
     </main>
-    <footer>
-      <span id="copyright">
+</body>
+<footer>
+    <!-- was unsure what to put in the footer -->
+    <span id="copyright">
         &copy; Team 18
-      </span>
-    </footer>
-  </body>
+    </span>
+</footer>
 </html>
-
-
-
