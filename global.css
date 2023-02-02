@@ -1,6 +1,34 @@
-* {
+body {
+    width: 100%;
+    margin: 0;
+}
+header {
+    /* background: ;*/
+    display: grid;
+}
+nav {
+    margin: 0 auto;
+    display: inline;
+}
+.home-nav {
     
 }
-body {
+.main-nav {
     
+}
+.account-nav {
+    
+}
+.categories-menu li {
+    display: inline;
+    padding: 10px;
+}
+/* Remove when ChatGBT AI is added */
+#call-to-action {
+    display: none;
+}
+
+/* For responsive layout - alter mobile layout here */
+@media (max-width: 600px) {
+
 }
