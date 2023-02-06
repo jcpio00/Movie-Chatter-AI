@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style1.css"/>
     <link rel="stylesheet" href="login.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,13 +9,15 @@
     <title>Login Page</title>
   </head>
   <body>
-    <h1>Login Page</h1>
-    <form>
-      <input type="email" id="email" placeholder="Email">
-      <input type="password" id="password" placeholder="Password">
-      <button type="button" onclick="login()">Login</button>
-      <button type="button" onclick="location.href = 'signup.html'">Sign Up</button>
-    </form>
+    <div class="loginpage">
+      <h1 class="logo">MOVIE CHATTER</h1>
+      <form>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button type="button" onclick="login()">Login</button>
+        <button type="button" onclick="location.href = 'signup.html'">Sign Up</button>
+      </form>
+    </div>
     <div id="error-message"></div>
   </body>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>

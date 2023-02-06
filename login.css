@@ -1,11 +1,11 @@
-.body {
-    position: fixed;
-    top: 50px;
-    width: 75vw;
-    font-size: 20px;
-    background-image: none;
-    height: 40px;
+.loginpage {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
+    margin-top: 100px;
+}
+
+.logo {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
