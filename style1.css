@@ -1,8 +1,22 @@
 .container {
+  display: grid;
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.header {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  background-image: none;
+  height: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 100px;
 }
 
 .title {
@@ -23,4 +37,15 @@
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0px;
+  width:100vw;
+  background-color: none;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
