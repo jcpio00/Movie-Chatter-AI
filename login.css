@@ -2,10 +2,10 @@
     position: fixed;
     top: 50px;
     width: 75vw;
+    font-size: 20px;
     background-image: none;
     height: 40px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
 }
