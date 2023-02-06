@@ -69,6 +69,10 @@ function signUp() {
     .then(function(user) {
       console.log("Sign up successful!");
       // perform any necessary actions after successful sign up
+
+      window.location.replace("home.html");
+
+
     })
     .catch(function(error) {
       console.error("Sign up failed:", error.message);
