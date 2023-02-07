@@ -7,31 +7,23 @@
   </head>
   <body>
     <h1 class="signup">Sign Up Page</h1>
-    <div class="criteria">
       <form>
-        <p>
-        <input type="text" id="firstName" placeholder="First Name">
-        </p>
-        <p>
-        <input type="text" id="lastName" placeholder="Last Name">
-        </p>
-        <p>
-        <input type="email" id="email" placeholder="Email">
-        </p>
-        <p>
-        <input type="tel" id="phone" placeholder="Phone">
-        </p>
-        <p>
-        <input type="password" id="password" placeholder="Password">
-        </p>
-        <p>
-        <input type="password" id="confirmPassword" placeholder="Confirm Password">
-        </p>
-        <p>
-        <button type="button" onclick="signUp()">Sign Up</button>
-        <button type="button" onclick="location.href = 'login.html'">Back</button>
-        </p>
-    </div>
+        <ul class="criteria">
+        <li><input type="text" id="firstName" placeholder="First Name"></li>
+     
+        <li><input type="text" id="lastName" placeholder="Last Name"></li>
+      
+        <li><input type="email" id="email" placeholder="Email"></li>
+       
+        <li><input type="tel" id="phone" placeholder="Phone"></li>
+        
+        <li><input type="password" id="password" placeholder="Password"></li>
+     
+        <li><input type="password" id="confirmPassword" placeholder="Confirm Password"></li>
+        
+        <li><button type="button" onclick="signUp()">Sign Up</button>
+        <button type="button" onclick="location.href = 'login.html'">Back</button></li>
+        </ul>
     </form>
     <div id="error-message"></div>
   </body>
