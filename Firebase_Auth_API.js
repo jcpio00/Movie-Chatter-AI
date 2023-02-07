@@ -40,29 +40,53 @@ function login() {
     .catch(function(error) {
       console.error("Login failed:", error.message);
       document.getElementById("error-message").innerHTML = error.message;
-      window.location.replace("login.html");
+      setTimeout(function() {
+        document.getElementById("error-message").innerHTML = "";
+      }, 8000);
+     // window.location.replace("login.html");
     });
 }
 
 function signUp() {
+  var firstName = document.getElementById("firstName").value;
+  var lastName = document.getElementById("lastName").value;
   var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
   var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (password !== confirmPassword) {
+    document.getElementById("error-message").innerHTML = "Passwords do not match";
+    setTimeout(function() {
+      document.getElementById("error-message").innerHTML = "";
+    }, 8000);
+    return;
+  }
+
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(function(user) {
       console.log("Sign up successful!");
-
       // perform any necessary actions after successful sign up
 
+      window.location.replace("home.html");
 
 
     })
     .catch(function(error) {
       console.error("Sign up failed:", error.message);
       document.getElementById("error-message").innerHTML = error.message;
+      setTimeout(function() {
+        document.getElementById("error-message").innerHTML = "";
+      }, 8000);
     });
 }
+
+
+
+
+
 // Logout event listener
 
 document.querySelector(".logout-btn").addEventListener("click", function() {

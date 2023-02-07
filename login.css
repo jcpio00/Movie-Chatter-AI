@@ -1,0 +1,15 @@
+.loginpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.logo {
+    font-size: 40px;
+    margin-bottom: 0px;
+    text-align: center;
+    padding: 0 0 20px;
+}
+
+

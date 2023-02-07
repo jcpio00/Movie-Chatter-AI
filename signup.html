@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="signup.css"/>
+    <title>Sign Up Page</title>
+  </head>
+  <body>
+    <h1 class="signup">Sign Up Page</h1>
+      <form>
+        <ul class="criteria">
+        <li><input type="text" id="firstName" placeholder="First Name"></li>
+     
+        <li><input type="text" id="lastName" placeholder="Last Name"></li>
+      
+        <li><input type="email" id="email" placeholder="Email"></li>
+       
+        <li><input type="tel" id="phone" placeholder="Phone"></li>
+        
+        <li><input type="password" id="password" placeholder="Password"></li>
+     
+        <li><input type="password" id="confirmPassword" placeholder="Confirm Password"></li>
+        
+        <li><button type="button" onclick="signUp()">Sign Up</button>
+        <button type="button" onclick="location.href = 'login.html'">Back</button></li>
+        </ul>
+    </form>
+    <div id="error-message"></div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+  <script src="Firebase_Auth_API.js"></script>
+</html>
