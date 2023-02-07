@@ -28,13 +28,16 @@ function getResponse() {
     });
   }
 
-  
+  // search for movies based on a chosen genre using the TMDB API.
+
   $(document).ready(function() {
     var API_KEY = "5de60d88a55b9fbc648230694f21dd37";
   
     $("#search-btn").click(function() {
       var genreId = $("#genres").val();
       var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+
+      //sending the request to the TMDB API and receiving a response in the form of a JSON object
   
       $.get(url, function(data, status) {
         var movies = data.results;
