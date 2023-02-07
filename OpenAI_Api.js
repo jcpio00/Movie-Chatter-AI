@@ -4,7 +4,7 @@ async function generateResponse() {
 
     // Define the model and prompt to use
     const model = "text-davinci-002";
-    const prompt = "What is the meaning of life?";
+    const prompt =  document.getElementById("prompt");
 
     // Generate a response using the OpenAI API
     const response = await openai.prompt(apiKey, model, prompt);
