@@ -12,14 +12,4 @@
     padding: 0 0 20px;
 }
 
-.header {
-    position: fixed;
-    top: 0px;
-    width: 100vw;
-    background-image: none;
-    height: 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
+

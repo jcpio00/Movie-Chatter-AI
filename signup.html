@@ -2,19 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="signup.css"/>
     <title>Sign Up Page</title>
   </head>
   <body>
-    <h1>Sign Up Page</h1>
-    <form>
-      <input type="text" id="firstName" placeholder="First Name">
-      <input type="text" id="lastName" placeholder="Last Name">
-      <input type="email" id="email" placeholder="Email">
-      <input type="tel" id="phone" placeholder="Phone">
-      <input type="password" id="password" placeholder="Password">
-      <input type="password" id="confirmPassword" placeholder="Confirm Password">
-      <button type="button" onclick="signUp()">Sign Up</button>
-      <button type="button" onclick="location.href = 'login.html'">Back</button>
+    <h1 class="signup">Sign Up Page</h1>
+    <div class="criteria">
+      <form>
+        <p>
+        <input type="text" id="firstName" placeholder="First Name">
+        </p>
+        <p>
+        <input type="text" id="lastName" placeholder="Last Name">
+        </p>
+        <p>
+        <input type="email" id="email" placeholder="Email">
+        </p>
+        <p>
+        <input type="tel" id="phone" placeholder="Phone">
+        </p>
+        <p>
+        <input type="password" id="password" placeholder="Password">
+        </p>
+        <p>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        </p>
+        <p>
+        <button type="button" onclick="signUp()">Sign Up</button>
+        <button type="button" onclick="location.href = 'login.html'">Back</button>
+        </p>
+    </div>
     </form>
     <div id="error-message"></div>
   </body>
