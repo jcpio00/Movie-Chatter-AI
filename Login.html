@@ -2,21 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style1.css"/>
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="login.css"/>
+    <link rel="stylesheet" href="global.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=oboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <title>Login Page</title>
   </head>
   <body>
-    <h1>Login Page</h1>
-    <form>
-      <input type="email" id="email" placeholder="Email">
-      <input type="password" id="password" placeholder="Password">
-      <button type="button" onclick="login()">Login</button>
-      <button type="button" onclick="location.href = 'signup.html'">Sign Up</button>
-    </form>
+    <header>
+      <!-- separated the nav into sections to allow easier mobile alterations in css -->
+      <nav>
+          <div class="home-nav">
+              <a href="index.html">Movie Chatter AI</a>
+          </div>
+          <!-- To be discussed with group, separated to allow the use of a logo.
+          I thought using a more compact logo might be better for smaller screens.
+          On larger screens, this can be kept, moved to another location, or hidden.
+          <div class="logo-nav">
+              <a href="index.html"><img src="" alt="Movie Chatter AI Logo"></a>
+          </div> -->
+          <div class="main-nav">
+              <a href="">TV Shows</a>
+              <a href="">Movies</a>
+              <!-- possible replace with search icon on smaller screens -->
+              <input type="text" placeholder="Search" id="search-bar">
+          </div>
+          <div class="account-nav">
+              <a href="">Account</a>
+          </div>
+      </nav>
+  </header>
+    <div class="loginbox">
+      <h1 class="logo">MOVIE CHATTER</h1>
+      <form>
+        <p>Email</p>
+        <input type="email" id="email" placeholder="Enter Email">
+        <p>Password</p>
+        <input type="password" id="password" placeholder="PasswordPassword">
+        <p>
+        <button type="button" onclick="login()">Login</button>
+        <button type="button" onclick="location.href = 'signup.html'">Sign Up</button>
+        </p>
+      </form>
+    </div>
     <div id="error-message"></div>
   </body>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
