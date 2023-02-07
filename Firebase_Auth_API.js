@@ -33,7 +33,7 @@ function login() {
 
       // perform any necessary actions after successful login
 
-      window.location.replace("home.html");
+      window.location.replace("index.html");
 
 
     })
@@ -70,7 +70,7 @@ function signUp() {
       console.log("Sign up successful!");
       // perform any necessary actions after successful sign up
 
-      window.location.replace("home.html");
+      window.location.replace("index.html");
 
 
     })

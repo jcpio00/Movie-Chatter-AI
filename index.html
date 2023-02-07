@@ -70,11 +70,35 @@ redirected to the sign in page. -->
         <!-- Category Title, Featured page as default/example, taken from database based on what is currently searched -->
         <h1>Featured</h1>
         <!-- list of movies-->
+        <select id="genres">
+            <option value="28">Action</option>
+            <option value="12">Adventure</option>
+            <option value="16">Animation</option>
+            <option value="35">Comedy</option>
+            <option value="80">Crime</option>
+            <option value="99">Documentary</option>
+            <option value="18">Drama</option>
+            <option value="10751">Family</option>
+            <option value="14">Fantasy</option>
+            <option value="36">History</option>
+            <option value="27">Horror</option>
+            <option value="10402">Music</option>
+            <option value="9648">Mystery</option>
+            <option value="10749">Romance</option>
+            <option value="878">Science Fiction</option>
+            <option value="10770">TV Movie</option>
+            <option value="53">Thriller</option>
+            <option value="10752">War</option>
+            <option value="37">Western</option>
+          </select>
+          <button id="search-btn">Search</button>
+          <div id="movie-list"></div>
+
         <!-- OpenAI API example-->
         <h1>OpenAI API Example</h1>
         <form>
           <label for="prompt">Prompt:</label>
-          <input type="text" id="prompt" name="prompt" value=" ">
+          <input type="text" id="prompt" name="prompt" value="">
           <button type="button" onclick="getResponse()">Get Response</button>
         </form>
         <div id="response"></div>

@@ -27,3 +27,25 @@ function getResponse() {
       }
     });
   }
+
+  
+  $(document).ready(function() {
+    var API_KEY = "5de60d88a55b9fbc648230694f21dd37";
+  
+    $("#search-btn").click(function() {
+      var genreId = $("#genres").val();
+      var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+  
+      $.get(url, function(data, status) {
+        var movies = data.results;
+        var movieList = "";
+  
+        for (var i = 0; i < movies.length; i++) {
+          movieList += "<p>" + movies[i].title + "</p>";
+        }
+  
+        $("#movie-list").html(movieList);
+      });
+    });
+  });
+  
