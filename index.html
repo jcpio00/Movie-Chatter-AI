@@ -68,11 +68,11 @@ redirected to the sign in page. -->
         <!-- Category Title, Featured page as default/example, taken from database based on what is currently searched -->
         <h1>Featured</h1>
         <!-- list of movies-->
-        <div onload="generateResponse()" >
-                <div id="response">
-                    Loading response...
-                </div>
-        </div>
+
+        <textarea id="prompt" rows="4" cols="50"></textarea><br>
+        
+        <button onclick="generateResponse()">Get Response</button><br><br>
+        <div id="response"></div>
     </main>
 </body>
 <footer>
