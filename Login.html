@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style1.css"/>
     <link rel="stylesheet" href="login.css"/>
     <link rel="stylesheet" href="global.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,24 +14,21 @@
     <header>
       <!-- separated the nav into sections to allow easier mobile alterations in css -->
       <nav>
-          <div class="home-nav">
-              <a href="index.html">Movie Chatter AI</a>
+          <div class="large-screen-nav">
+              <a href="index.html" class="text-nav-item" id="home-nav">Movie Chatter AI</a>
+              <a href="" class="text-nav-item"id="shows-nav">TV Shows</a>
+              <a href="" class="text-nav-item" id="movies-nav">Movies</a>
+              <input type="text" placeholder="Search" class="text-nav-item" id="search-bar">
+              <a href="account.html" class="text-nav-item" id="account-nav">Account</a>
           </div>
-          <!-- To be discussed with group, separated to allow the use of a logo.
-          I thought using a more compact logo might be better for smaller screens.
-          On larger screens, this can be kept, moved to another location, or hidden.
-          <div class="logo-nav">
-              <a href="index.html"><img src="" alt="Movie Chatter AI Logo"></a>
-          </div> -->
-          <div class="main-nav">
-              <a href="">TV Shows</a>
-              <a href="">Movies</a>
-              <!-- possible replace with search icon on smaller screens -->
-              <input type="text" placeholder="Search" id="search-bar">
+          <div class="small-screen-nav">
+              <img src="images/menu-button.png" alt="Menu Logo" class="logo-nav">
+              <img src="images/search-button.png" alt="Search Logo" class="logo-nav">
+              <a href="index.html"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a>
+              <a href="account.html"><img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo"></a>
           </div>
-          <div class="account-nav">
-              <a href="">Account</a>
-          </div>
+      </nav>
+  </header>
       </nav>
   </header>
     <div class="loginbox">
@@ -48,8 +46,14 @@
     </div>
     <div id="error-message"></div>
   </body>
+  <footer>
+    <!-- was unsure what to put in the footer -->
+    <span id="copyright">
+        &copy; Team 18
+    </span>
+    </footer>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
   <script src="Firebase_Auth_API.js"></script>
- 
+  
 </html>
