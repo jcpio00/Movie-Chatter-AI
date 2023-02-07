@@ -16,6 +16,7 @@ redirected to the sign in page. -->
     <link rel="stylesheet" href="global.css">
     <!-- Loads Open Ai library from de CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/openai@2.0.0/dist/openai.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="OpenAI_Api.js"></script>
 </head>
 <body>
@@ -69,10 +70,13 @@ redirected to the sign in page. -->
         <!-- Category Title, Featured page as default/example, taken from database based on what is currently searched -->
         <h1>Featured</h1>
         <!-- list of movies-->
-
-        <textarea id="prompt" rows="4" cols="50"></textarea><br>
-
-        <button onclick="generateResponse()">Get Response</button><br><br>
+        <!-- OpenAI API example-->
+        <h1>OpenAI API Example</h1>
+        <form>
+          <label for="prompt">Prompt:</label>
+          <input type="text" id="prompt" name="prompt" value="What is the meaning of life?">
+          <button type="button" onclick="getResponse()">Get Response</button>
+        </form>
         <div id="response"></div>
     </main>
 </body>
