@@ -61,6 +61,9 @@ footer {
     background-color: #333366;
     color: #DFE9FF;
     height: 9vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 /* For responsive layout - alter mobile layout here */
 @media only screen and (max-width: 900px) {
@@ -109,5 +112,3 @@ footer {
         right: 2vw;
     }
 }
-
-/* nfsdjahgf */

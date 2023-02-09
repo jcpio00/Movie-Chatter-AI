@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style1.css"/>
-    <link rel="stylesheet" href="signup.css"/>
+    <link rel="stylesheet" href="forms.css"/>
     <link rel="stylesheet" href="global.css"/>
-    <title>Sign Up Page</title>
+    <title>Sign Up</title>
   </head>
   <body>
     <header>
-      <!-- separated the nav into sections to allow easier mobile alterations in css -->
+      <!-- temporarily removing nav, users won't be able to see this section from login screen unless guest accounts are added
       <nav>
           <div class="large-screen-nav">
               <a href="index.html" class="text-nav-item" id="home-nav">Movie Chatter AI</a>
@@ -24,27 +24,23 @@
               <a href="index.html"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a>
               <a href="account.html"><img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo"></a>
           </div>
-      </nav>
+      </nav> -->
   </header>
-    <h1 class="signup">Sign Up Page</h1>
+    <div class="form-box">
+      <h1 class="title">Sign Up</h1>
       <form>
-        <ul class="criteria">
-        <li><input type="text" id="firstName" placeholder="First Name"></li>
-     
-        <li><input type="text" id="lastName" placeholder="Last Name"></li>
-      
-        <li><input type="email" id="email" placeholder="Email"></li>
-       
-        <li><input type="tel" id="phone" placeholder="Phone"></li>
-        
-        <li><input type="password" id="password" placeholder="Password"></li>
-     
-        <li><input type="password" id="confirmPassword" placeholder="Confirm Password"></li>
-        
-        <li><button type="button" onclick="signUp()">Sign Up</button>
-        <button type="button" onclick="location.href = 'login.html'">Back</button></li>
-        </ul>
-    </form>
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="tel" id="phone" placeholder="Phone Number">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <p>
+        <button type="button" onclick="signUp()">Sign Up</button>
+        <button type="button" onclick="location.href = 'login.html'">Back</button>
+        </p>
+      </form>
+    </div>
     <div id="error-message"></div>
   </body>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>

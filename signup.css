@@ -1,11 +1,16 @@
-.signup {
+#signup-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+    margin-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(51, 51, 102, .9);
+    width: 30%;
 }
 
-.criteria{
+.criteria {
     font-size: 40px;
     margin-bottom: 100px;
     text-align: center;
