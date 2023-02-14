@@ -65,6 +65,48 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* movie generation css*/
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .movie {
+    width: 30%;
+    margin: 20px;
+    text-align: left;
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 992px) {
+    .movie {
+      width: 45%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .movie {
+      width: 60%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .movie {
+      width: 80%;
+    }
+  }
+  
+
 /* For responsive layout - alter mobile layout here */
 @media only screen and (max-width: 900px) {
     .large-screen-nav {
