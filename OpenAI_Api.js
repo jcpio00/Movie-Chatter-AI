@@ -4,7 +4,7 @@ function getResponse() {
     
     // Make an API request using the jQuery AJAX method
     $.ajax({
-      url: "https://api.openai.com/v1/engines/text-davinci-002/completions",
+      url: "https://api.openai.com/v1/engines/text-davinci-003/completions",
       type: "POST",
       headers: {
         "Authorization": "Bearer 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",
@@ -12,8 +12,8 @@ function getResponse() {
       },
       data: JSON.stringify({
         "prompt": prompt,
-        "max_tokens": 1024,
-        "temperature": 0.5
+        "max_tokens": 2024,
+        "temperature": 0.7
       }),
       success: function(response) {
         // Extract the response text
