@@ -88,11 +88,11 @@ function getResponse() {
       var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
   
       $.get(url, function(data, status) {
-        var movies = data.results.slice(0,10);
+        var movies = data.results.slice(0,6);
         var movieList = "";
   
         for (var i = 0; i < movies.length; i++) {
-          movieList += '<div class="movie-item col-md-3 col-sm-6">';
+          movieList += '<div class="movie-item ">';
           movieList += '<h2>' + movies[i].title + '</h2>';
           movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
           movieList += '<p> Overview: ' + movies[i].overview + '</p>';
