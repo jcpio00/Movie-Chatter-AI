@@ -70,7 +70,7 @@ function signUp() {
       console.log("Sign up successful!");
       // perform any necessary actions after successful sign up
 
-      window.location.replace("index.html");
+      window.location.replace("home.html");
 
 
     })
