@@ -6,6 +6,18 @@ header {
     /* background: ;*/
     display: grid;
 }
+.scrollContainer {
+}
+#scrollHorizontal {
+    display:inline-block;
+    width: 600px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    white-space: nowrap;
+  }
+
 nav {
     display: inline;
     position: sticky;
@@ -36,11 +48,17 @@ nav a:hover {
 .arrow-logos {
     height: 50px;
     padding: 10px;
+    background:none;
+    margin:0;
+    padding:0;
+    border:0;
 }
 #left-arrow {
+    display: inline-block;
     
 }
 #right-arrow {
+    display: inline-block;
     
 }
 .categories-menu {

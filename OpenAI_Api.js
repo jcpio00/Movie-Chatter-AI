@@ -84,6 +84,9 @@ function getResponse() {
         default:
           genreId = 28;
       }
+
+      // Update Category Title
+      $("CategoryTitle").text(selectedCategory)
   
       var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
   
