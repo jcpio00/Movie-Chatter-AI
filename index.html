@@ -20,6 +20,7 @@ redirected to the sign in page. -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="OpenAI_Api.js"></script>
     <script src="account.js"></script>
+    
 </head>
 <body>
     <header>
@@ -35,8 +36,9 @@ redirected to the sign in page. -->
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Edit Profile</a>
                     <a class="dropdown-item" href="#">Reset Password</a>
-                    <a class="dropdown-item" href="#">Chat</a>
-                    <a class="dropdown-item" href="#">Sign Out</a>
+                    <a class="dropdown-item" href="chat.html">Chat</a>
+                    <a  class="logout-btn" href="#">Sign Out</a>
+                    <button class="logout-btn">Logout</button>
                   </div>
                 </div>
                 
@@ -95,14 +97,7 @@ redirected to the sign in page. -->
           </section>
           
 
-        <!-- OpenAI API example-->
-        <h1>Questions about a movie ??</h1>
-        <form>
-          <label for="prompt">Prompt:</label>
-          <input type="text" id="prompt" name="prompt" value="">
-          <button type="button" onclick="getResponse()">Get Response</button>
-        </form>
-        <div id="response"></div>
+       
     </main>
 </body>
 <footer>
@@ -111,4 +106,7 @@ redirected to the sign in page. -->
         &copy; Team 18
     </span>
 </footer>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="Firebase_Auth_API.js"></script>
 </html>

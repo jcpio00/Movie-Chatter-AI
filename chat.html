@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/openai@2.0.0/dist/openai.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="OpenAI_Api.js"></script>
+    <script src="chat.css"></script>
+  </head>
+  <body>
+    <h1>Movie Chat</h1>
+     <!-- OpenAI API example-->
+     <h1>Questions about a movie ??</h1>
+     <form>
+       <label for="prompt">Prompt:</label>
+       <input type="text" id="prompt" name="prompt" value="">
+       <button type="button" onclick="getResponse()">Get Response</button>
+     </form>
+     <div id="response"></div>
+    
+  </body>
+  
+</html>
