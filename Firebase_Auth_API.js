@@ -33,7 +33,7 @@ function login() {
 
       // perform any necessary actions after successful login
 
-      window.location.replace("index.html");
+      window.location.replace("home.html");
 
 
     })
