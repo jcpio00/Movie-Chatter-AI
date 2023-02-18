@@ -8,8 +8,40 @@
     <script src="https://cdn.jsdelivr.net/npm/openai@2.0.0/dist/openai.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="OpenAI_Api.js"></script>
-    <script src="chat.css"></script>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="movie_dashboard.css">
   </head>
+  <header>
+    <nav>
+        <div class="large-screen-nav">
+            <a href="index.html" class="text-nav-item" id="home-nav">Movie Chatter AI</a>
+            <a href="" class="text-nav-item"id="shows-nav">TV Shows</a>
+            <a href="" class="text-nav-item" id="movies-nav">Movies</a>
+            <input type="text" placeholder="Search" class="text-nav-item" id="search-bar">
+            <div   class="dropdown" >
+              <button class="dropdown-toggle" >Account</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Edit Profile</a>
+                <a class="dropdown-item" href="#">Reset Password</a>
+                <a class="dropdown-item" href="chat.html">Chat</a>
+                <a  class="logout-btn" href="#">Sign Out</a>
+                
+              </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="small-screen-nav">
+            <img src="images/menu-button.png" alt="Menu Logo" class="logo-nav">
+            <img src="images/search-button.png" alt="Search Logo" class="logo-nav">
+            <a href="index.html"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a>
+            <a href=""><img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo"></a>
+        </div>
+    </nav>
+  </header>
   <body>
     <h1>Movie Chat</h1>
      <!-- OpenAI API example-->
