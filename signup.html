@@ -20,9 +20,11 @@
               <a href="account.html"><img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo"></a>
           </div>
       </nav> -->
-  </header>
+    </header>
+    <h1 class="page-title">MOVIE CHATTER</h1>
+    <!-- option to use logo instead, currently no css: <a href="index.html" class="page-title"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a> -->
     <div class="form-box">
-      <h1 class="title">Sign Up</h1>
+      <h1 class="form-title">Sign Up</h1>
       <form>
         <input type="text" id="firstName" placeholder="First Name">
         <input type="text" id="lastName" placeholder="Last Name">
@@ -30,9 +32,15 @@
         <input type="tel" id="phone" placeholder="Phone Number">
         <input type="password" id="password" placeholder="Password">
         <input type="password" id="confirmPassword" placeholder="Confirm Password">
-        <p>
         <button type="button" onclick="signUp()">Sign Up</button>
-        <button type="button" onclick="location.href = 'login.html'">Back</button>
-        </p>
+        <p>Already have an account? <a href="Login.html">Login here!</a></p>
       </form>
     </div>
+  </body>
+  <footer>
+    <!-- was unsure what to put in the footer -->
+    <span id="copyright">
+        <br> &copy; Team 18
+    </span>
+  </footer>
+</html>

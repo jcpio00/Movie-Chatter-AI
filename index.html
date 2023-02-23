@@ -31,17 +31,15 @@ redirected to the sign in page. -->
                 <a href="" class="text-nav-item"id="shows-nav">TV Shows</a>
                 <a href="" class="text-nav-item" id="movies-nav">Movies</a>
                 <input type="text" placeholder="Search" class="text-nav-item" id="search-bar">
-                <div   class="dropdown" >
-                  <button class="dropdown-toggle" >Account</button>
+                <div class="dropdown" >
+                  <button class="dropdown-toggle">Account</button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Edit Profile</a>
                     <a class="dropdown-item" href="#">Reset Password</a>
                     <a class="dropdown-item" href="chat.html">Chat</a>
-                    <a  class="logout-btn" href="#">Sign Out</a>
-                   
+                    <a class="logout-btn" href="#">Sign Out</a>
                   </div>
                 </div>
-                
             </div>
 
   
@@ -50,7 +48,15 @@ redirected to the sign in page. -->
                 <img src="images/menu-button.png" alt="Menu Logo" class="logo-nav">
                 <img src="images/search-button.png" alt="Search Logo" class="logo-nav">
                 <a href="index.html"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a>
-                <a href=""><img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo"></a>
+                <div class="dropdown" >
+                  <img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo">
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Reset Password</a>
+                    <a class="dropdown-item" href="chat.html">Chat</a>
+                    <a class="logout-btn" href="#">Sign Out</a>
+                  </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -103,7 +109,7 @@ redirected to the sign in page. -->
 <footer>
     <!-- was unsure what to put in the footer -->
     <span id="copyright">
-        &copy; Team 18
+        <br> &copy; Team 18
     </span>
 </footer>
 <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>

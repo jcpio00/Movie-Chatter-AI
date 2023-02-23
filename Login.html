@@ -29,16 +29,15 @@
         </div>
       </nav> -->
     </header>
-    <h1 class="title">MOVIE CHATTER</h1>
+    <h1 class="page-title">MOVIE CHATTER</h1>
+    <!-- option to use logo instead, currently no css: <a href="index.html" class="page-title"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a> -->
     <div class="form-box">
-      <h2 class="title">Login:</h1>
+      <h2 class="form-title">Login:</h1>
       <form>
         <input type="email" id="email" placeholder="Email">
         <input type="password" id="password" placeholder="Password">
-        <p>
         <button type="button" onclick="login()">Login</button>
-        <button type="button" onclick="location.href = 'signup.html'">Sign Up</button>
-        </p>
+        <p>Need an account? <a href="signup.html">Sign up here!</a></p>
       </form>
     </div>
     <div id="error-message"></div>
@@ -46,9 +45,9 @@
   <footer>
     <!-- was unsure what to put in the footer -->
     <span id="copyright">
-        &copy; Team 18
+        <br> &copy; Team 18
     </span>
-    </footer>
+  </footer>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
   <script src="Firebase_Auth_API.js"></script>

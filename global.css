@@ -61,9 +61,14 @@ footer {
     background-color: #333366;
     color: #DFE9FF;
     height: 9vh;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
+}
+#copyright {
+  position: absolute;
+  padding-top: 1%;
+  padding-left: 3%;
 }
 /* movie generation css*/
 
@@ -83,7 +88,7 @@ footer {
     width: 30%;
     margin: 20px;
     text-align: left;
-    background-color: lightgray;
+    background-color: #DFE9FF;
     padding: 20px;
     border-radius: 10px;
   }
@@ -108,7 +113,7 @@ footer {
   /*dropdown*/
  /* Default styles for larger screens */
 .dropdown {
-    position: fixed;
+    position: absolute;
     margin: 20px;
     top: 1.5vh;
     right: 2vw;
@@ -120,14 +125,13 @@ footer {
 
 .dropdown-toggle {
   display: block;
-  padding: 15px;
-  margin: 5px ;
+  font-size: 3vh;
   text-decoration: none;
-  color: #333;
-  border: 1px solid #ccc;
-  background-color: #fff;
+  color: #DFE9FF;
+  border: none;
+  background-color: #333366;
   cursor: pointer;
-  
+  background: none;
 }
 
 .dropdown-menu {
@@ -135,7 +139,7 @@ footer {
   top: 100%;
   left: 0;
   display: none;
-  background-color: #3f487e;
+  background-color: #9FAFFF;
   border: 2px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   min-width: 180px;
@@ -145,20 +149,17 @@ footer {
   display: block;
   padding: 5px;
   text-decoration: none;
-  color: #333;
+  color: #333366;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f5f5f5;
+  background-color: #DFE9FF;
 }
 
 .show {
   display: block;
 }
 
-
-  
-  
 
 /* For responsive layout - alter mobile layout here */
 @media only screen and (max-width: 900px) {
