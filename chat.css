@@ -2,50 +2,51 @@ body {
   background-color: #DFE9FF;
   color: #333366;
 }
+
 main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 1;
-  }
+}
   
-  .container {
+#chat-button .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 5px;
-  }
+}
   
-  h1 {
+#chat-button h1 {
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 2rem;
-  }
+}
   
-  form {
+#chat-button form {
     display: flex;
     flex-direction: column;
-  }
+}
   
-  label {
+#chat-button label {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
-  }
+}
   
-  input {
+#chat-button input {
     padding: 0.5rem;
     font-size: 1.2rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 1rem;
     outline: none;
-  }
+}
   
-  button {
+#chat-button button {
     padding: 0.8rem 1.2rem;
     font-size: 1.2rem;
     background-color: #9FAFFF;
@@ -55,13 +56,13 @@ main {
     margin-top: 1rem;
     transition: background-color 0.3s ease-in-out;
     outline: none;
-  }
+}
   
-  button:hover {
+#chat-button button:hover {
     background-color: #8096ff;
-  }
+}
   
-  #response {
+#chat-button #response {
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 5px;
@@ -74,15 +75,15 @@ main {
     max-height: 500px;
     overflow-y: auto;
     border: 1px solid #ccc;
-  }
+}
   
-  @media only screen and (max-width: 600px) {
-    .container {
+@media only screen and (max-width: 600px) {
+  #chat-button .container {
       margin: 20px;
       padding: 10px;
-    }
-    h1 {
-      font-size: 2rem;
-    }
   }
+  #chat-button h1 {
+      font-size: 2rem;
+  }
+}
   
