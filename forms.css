@@ -53,6 +53,9 @@ body {
 .page-title {
     font-size: 4vh;
     margin-left: 4vh;
+}
+.page-title a {
+    text-decoration: none;
     color: #9FAFFF;
 }
 .form-title {
@@ -62,3 +65,17 @@ body {
     align-self: flex-start;
     color: #DFE9FF;
 }
+@media only screen and (max-height: 750px) {
+    footer {
+      position: relative;
+      bottom: 0;
+      margin-top: 20px;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    footer {
+      position: relative;
+      bottom: 0;
+      margin-top: 20px;
+    }
+  }

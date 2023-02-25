@@ -3,19 +3,15 @@ body {
   color: #333366;
 }
 
-main {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 1;
-}
-  
-#chat-button .container {
+#chat-button {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: auto;
+    margin-top: 5%;
+    padding: 1.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
   
 #chat-button h1 {
@@ -23,7 +19,14 @@ main {
     font-weight: bold;
     text-align: center;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+#chat-button h3 {
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 500;
+
 }
   
 #chat-button form {
@@ -76,6 +79,17 @@ main {
     overflow-y: auto;
     border: 1px solid #ccc;
 }
+#chat-button a {
+  color: #333366;
+  text-decoration: none;
+}
+#chat-button a:hover {
+  color: #333366;
+  font-style: italic;
+}
+#chat-button a:visited {
+  color: #333366;
+}
   
 @media only screen and (max-width: 600px) {
   #chat-button .container {
@@ -86,4 +100,17 @@ main {
       font-size: 2rem;
   }
 }
-  
+@media only screen and (max-height: 750px) {
+  footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 20px;
+  }
+}

@@ -162,35 +162,70 @@ footer {
 
 
 /* For responsive layout - alter mobile layout here */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
     .large-screen-nav {
         display: none;
     }
     .small-screen-nav {
         display: inline;
     }
+    nav {
+        height: 10vh;
+    }
     .logo-nav {
-        width: 50px;
+        width: 14vw;
         padding-top: 1vh;
         padding-left: 2%;
     }
     #movie-chatter-logo {
         padding-left: 15%;
-        position: fixed;
+        position: absolute;
         margin: 0;
         padding: 0;
         top: 1vh;
         left: 45vw;
     }
     #profile-logo {
-        position: fixed;
+        position: absolute;
         margin: 0;
         padding: 0;
         top: 1vh;
         right: 2vw;
     }
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (max-width: 300px) {
+  nav {
+      height: 8vh;
+  }
+}
+@media only screen and (min-height: 720px) {
+  .logo-nav {
+      width: 11vw;
+  }
+}
+@media only screen and (min-height: 740px) {
+  .logo-nav {
+      width: 15vw;
+  }
+}
+@media only screen and (min-height: 1000px) {
+  .logo-nav {
+      width: 11vw;
+  }
+}
+@media only screen and (max-height: 750px) {
+  footer {
+    position: relative;
+    bottom: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  footer {
+    position: relative;
+    bottom: 0;
+  }
+}
+@media only screen and (min-width: 950px) {
     .large-screen-nav {
         display: inline;
     }
