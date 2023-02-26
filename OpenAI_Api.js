@@ -42,44 +42,56 @@ function getResponse() {
         case "Action":
           genreId = 28;
           break;
-        case "Comedy":
-          genreId = 35;
-          break;
-        case "Romance":
-          genreId = 10749;
-          break;
-        case "Musical":
-          genreId = 10402;
-          break;
-        case "Drama":
-          genreId = 18;
-          break;
-        case "Thriller":
-          genreId = 53;
-          break;
-        case "Horror":
-          genreId = 27;
-          break;
-        case "Crime":
-          genreId = 80;
-          break;
-        case "Documentaries":
-          genreId = 99;
-          break;
-        case "Fantasy":
-          genreId = 14;
-          break;
-        case "Sci-Fi":
-          genreId = 878;
+        case "Adventure":
+          genreId = 12;
           break;
         case "Animation":
           genreId = 16;
           break;
-        case "Fiction":
+        case "Comedy":
+          genreId = 35;
+          break;
+        case "Crime":
+          genreId = 80;
+          break;
+        case "Documentary":
+          genreId = 99;
+          break;
+        case "Drama":
+          genreId = 18;
+          break;
+        case "Family":
+          genreId = 10751;
+          break;
+        case "Fantasy":
+          genreId = 14;
+          break;
+        case "History":
+          genreId = 36;
+          break;
+        case "Horror":
+          genreId = 27;
+          break;
+        case "Music":
+          genreId = 10402;
+          break;
+        case "Mystery":
           genreId = 9648;
           break;
-        case "Non-Fiction":
-          genreId = 36;
+        case "Romance":
+          genreId = 10770;
+          break;
+        case "SciFi":
+          genreId = 878;
+          break;
+        case "Thriller":
+          genreId = 53;
+          break;
+        case "War":
+          genreId = 10752;
+          break;
+        case "Western":
+          genreId = 37;
           break;
         default:
           genreId = 28;
@@ -88,11 +100,10 @@ function getResponse() {
       var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
   
       $.get(url, function(data, status) {
+        var movieList = '<h1>' + selectedCategory + '</h1>';
         var movies = data.results.slice(0,6);
-        var movieList = "";
-  
+
         for (var i = 0; i < movies.length; i++) {
-          console.log(movies[i].poster_path)
           movieList += '<div class="movie-item ">';
           // need help getting the following line to work
           movieList += '<img src="' + movies[i].poster_path + '"></img>'
