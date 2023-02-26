@@ -36,7 +36,7 @@ function getResponse() {
     $(".categories-menu li").click(function() {
       var genreId = 28; // initialize with a default genre id
       var selectedCategory = $(this).text();
-  
+      $("#genre-title").html(selectedCategory);
       // get the genre id for the selected category
       switch (selectedCategory) {
         case "Action":
@@ -84,23 +84,30 @@ function getResponse() {
         default:
           genreId = 28;
       }
+
+      var baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`; 
   
-      var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+      var url = `${baseURL}&with_genres=${genreId}`;
   
       $.get(url, function(data, status) {
-        var movies = data.results.slice(0,6);
+        var movies = data.results.slice(0, 24);
         var movieList = "";
   
         for (var i = 0; i < movies.length; i++) {
-          movieList += '<div class="movie-item ">';
-          movieList += '<h2>' + movies[i].title + '</h2>';
-          movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
-          movieList += '<p> Overview: ' + movies[i].overview + '</p>';
-          movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
-          movieList += '</div>';
+          let imgUrl = `https://image.tmdb.org/t/p/w300/${movies[i].backdrop_path}`
+
+          movieList += `<div class="movie-item">
+          <div class="movie-image" style="background-image:url('${imgUrl}');">
+          </div>
+          <h2>${movies[i].title}</h2>
+          <p> Release Date: ${movies[i].release_date}</p>
+          <p> Overview: ${movies[i].overview}</p>
+          <p> Vote Average: ${movies[i].vote_average}</p>
+          </div>
+          `;
         }
   
-        $("#movie-list").html(movieList);
+        $("#movie-grid").html(movieList);
       });
     });
   });
