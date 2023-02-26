@@ -71,11 +71,18 @@ body {
       bottom: 0;
       margin-top: 20px;
     }
-  }
-  @media only screen and (max-width: 400px) {
+}
+@media only screen and (max-width: 400px) {
     footer {
       position: relative;
       bottom: 0;
       margin-top: 20px;
     }
-  }
+}
+@media only screen and (min-width: 1000px) {
+    footer {
+      position: relative;
+      bottom: 0;
+      margin-top: 20px;
+    }
+}

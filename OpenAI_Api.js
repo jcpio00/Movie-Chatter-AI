@@ -92,7 +92,10 @@ function getResponse() {
         var movieList = "";
   
         for (var i = 0; i < movies.length; i++) {
+          console.log(movies[i].poster_path)
           movieList += '<div class="movie-item ">';
+          // need help getting the following line to work
+          movieList += '<img src="' + movies[i].poster_path + '"></img>'
           movieList += '<h2>' + movies[i].title + '</h2>';
           movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
           movieList += '<p> Overview: ' + movies[i].overview + '</p>';
@@ -104,9 +107,4 @@ function getResponse() {
       });
     });
   });
-  
-      
-  
-  
-
   

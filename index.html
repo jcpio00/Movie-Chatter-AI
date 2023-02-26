@@ -8,7 +8,7 @@ redirected to the sign in page. -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,15 +21,16 @@ redirected to the sign in page. -->
     <script src="OpenAI_Api.js"></script>
     <script src="account.js"></script>
     
-</head>
-<body>
+    
+  </head>
+  <body>
     <header>
         <!-- separated the nav into sections to allow easier mobile alterations in css -->
         <nav>
             <div class="large-screen-nav">
-                <a href="index.html" class="text-nav-item" id="home-nav">Movie Chatter AI</a>
-                <a href="index.html" class="text-nav-item" id="home-nav">Explore</a>
-                <a href="chat.html" class="text-nav-item"id="shows-nav">ChatAI</a>
+                <a href="index.html" class="text-nav-item">Movie Chatter AI</a>
+                <a href="index.html" class="text-nav-item">Explore</a>
+                <a href="chat.html" class="text-nav-item">ChatAI</a>
                 <input type="text" placeholder="Search" class="text-nav-item" id="search-bar">
                 <div class="dropdown" >
                   <button class="dropdown-toggle">Account</button>
@@ -41,18 +42,10 @@ redirected to the sign in page. -->
                 </div>
             </div>
             <div class="small-screen-nav">
-                <img src="images/menu-button.png" alt="Menu Logo" class="logo-nav">
-                <img src="images/search-button.png" alt="Search Logo" class="logo-nav">
-                <a href="index.html"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a>
-                <div class="dropdown" >
-                  <img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo">
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Edit Profile</a>
-                    <a class="dropdown-item" href="#">Reset Password</a>
-                    <a class="dropdown-item" href="">Chat</a>
-                    <a class="logout-btn" href="#">Sign Out</a>
-                  </div>
-                </div>
+              <img src="images/menu-button.png" alt="Menu Logo" class="logo-nav">
+              <img src="images/search-button.png" alt="Search Logo" class="logo-nav">
+              <a href="index.html"><img src="images/logo.png" alt="Movie Chatter AI Logo" class="logo-nav" id="movie-chatter-logo"></a>
+              <a href=""><img src="images/profile-button.png" alt="Account Logo" class="logo-nav" id="profile-logo"></a>
             </div>
         </nav>
     </header>
@@ -98,14 +91,38 @@ redirected to the sign in page. -->
             </div>
           </section>
     </main>
-</body>
-<footer>
+  </body>
+  <footer>
     <!-- was unsure what to put in the footer -->
     <span id="copyright">
         <br> &copy; Team 18
     </span>
-</footer>
-<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
-    <script src="Firebase_Auth_API.js"></script>
+  </footer>
+  <script>
+  function populateMovies() {
+    var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+
+    $.get(url, function(data, status) {
+      var movies = data.results.slice(0,6);
+      var movieList = "";
+
+      for (var i = 0; i < movies.length; i++) {
+        console.log(movies[i].poster_path)
+        movieList += '<div class="movie-item ">';
+        // need help getting the following line to work
+        movieList += '<img src="' + movies[i].poster_path + '"></img>'
+        movieList += '<h2>' + movies[i].title + '</h2>';
+        movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
+        movieList += '<p> Overview: ' + movies[i].overview + '</p>';
+        movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
+        movieList += '</div>';
+      }
+
+      $("#movie-list").html(movieList);
+    }
+  )}
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+  <script src="Firebase_Auth_API.js"></script>
 </html>
