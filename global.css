@@ -15,7 +15,7 @@ nav {
     height: 9vh;
     background-color: #333366;
     color: #DFE9FF;
-    z-index: 1;
+    z-index: 2;
 }
 nav a {
     color: inherit;
@@ -109,12 +109,6 @@ nav a:hover {
 /* Remove when ChatGBT AI is added */
 #call-to-action {
     display: none;
-}
-#left-arrow {
-    
-}
-#right-arrow {
-    
 }
 
 main {

@@ -32,14 +32,21 @@ function getResponse() {
 
   var API_KEY = "5de60d88a55b9fbc648230694f21dd37";
 
-  $(document).ready(function() {
-    $(".categories-menu li").click(function() {
-      var genreId = 28; // initialize with a default genre id
-      var selectedCategory = $(this).text();
-  
-      // get the genre id for the selected category
-      switch (selectedCategory) {
-        case "Action":
+  var genreIds = [28, 35, 10749, 10402, 18, 53, 27, 80, 99, 14, 878, 16, 9648, 36];
+  // generates a random genre ID
+  var randomGenreId = genreIds[Math.floor(Math.random() * genreIds.length)];
+
+$(document).ready(function() {
+  // Load movies on page load
+  loadMovies(randomGenreId);
+
+  // Change displayed movies on category click
+  $(".categories-menu li").click(function() {
+    var selectedCategory = $(this).text();
+
+    // Get the genre id for the selected category
+    switch (selectedCategory) {
+      case "Action":
           genreId = 28;
           break;
         case "Comedy":
@@ -81,30 +88,72 @@ function getResponse() {
         case "Non-Fiction":
           genreId = 36;
           break;
+          case "Popular":
+          genreId = 18;
+          break;
+          case "Recent Releases":
+          genreId = 53;
+          break;
         default:
-          genreId = 28;
-      }
-  
-      var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
-  
-      $.get(url, function(data, status) {
-        var movies = data.results.slice(0,6);
-        var movieList = "";
-  
-        for (var i = 0; i < movies.length; i++) {
-          console.log(movies[i].poster_path)
-          movieList += '<div class="movie-item ">';
-          // need help getting the following line to work
-          movieList += '<img src="' + movies[i].poster_path + '"></img>'
-          movieList += '<h2>' + movies[i].title + '</h2>';
-          movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
-          movieList += '<p> Overview: ' + movies[i].overview + '</p>';
-          movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
-          movieList += '</div>';
-        }
-  
-        $("#movie-list").html(movieList);
+          genreId = randomGenreId;
+    }
+
+    loadMovies(genreId);
+  });
+});
+
+function loadMovies(genreId) {
+  var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+  var favorites = [];
+
+  $.get(url, function(data, status) {
+    var movies = data.results.slice(0, 10);
+    var movieList = "";
+
+    for (var i = 0; i < movies.length; i++) {
+      console.log(movies[i].poster_path);
+      movieList += '<div class="movie-item" id="' + movies[i].id + '">';
+      movieList += '<img src="https://image.tmdb.org/t/p/w500' + movies[i].poster_path + '">';
+      movieList += '<h2>' + movies[i].title + '</h2>';
+      movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
+      movieList += '<p> Overview: ' + movies[i].overview + '</p>';
+      movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
+      movieList += '<button class="favorite-button">Favorite</button>';
+      movieList += '<div class="trailer-container"></div>';
+      movieList += '</div>';
+    }
+
+    $("#movie-grid").html(movieList);
+
+    $(".movie-item").hover(function() {
+      var movieId = $(this).attr("id");
+
+      var trailerUrl = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + API_KEY;
+      $.get(trailerUrl, function(data, status) {
+        var trailerKey = data.results[0].key;
+        var trailerHtml = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + trailerKey + '" frameborder="0" allowfullscreen></iframe>';
+        $("#"+movieId+" .trailer-container").html(trailerHtml);
       });
+    }, function() {
+      $(this).find(".trailer-container").html("");
+    });
+
+    $(".favorite-button").click(function() {
+      var movieId = $(this).closest(".movie-item").attr("id");
+      if (favorites.includes(movieId)) {
+        favorites = favorites.filter(function(favorite) {
+          return favorite !== movieId;
+        });
+        $(this).text("Favorite");
+      } else {
+        favorites.push(movieId);
+        $(this).text("Unfavorite");
+      }
+      console.log("Favorites: " + favorites);
     });
   });
-  
+}
+
+
+
+
