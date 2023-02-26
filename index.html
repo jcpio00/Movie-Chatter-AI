@@ -20,6 +20,7 @@ redirected to the sign in page. -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="OpenAI_Api.js"></script>
     <script src="account.js"></script>
+    <script src="animations.js"></script>
     
     
   </head>
@@ -53,15 +54,13 @@ redirected to the sign in page. -->
       <h3 id="call-to-action">Sick of scrolling? Try chatting with our AI instead!</h3>
         <!-- temporary example categories sorting menu for css purposes
         I made the list long for easier testing of scrolling menu -->
-        <img class="arrow-logos" id="left-arrow" src="images/circular-left-arrow2.png" alt="Left Arrow">
-        <ul class="categories-menu">
-            <li id="featured-btn">Featured</li>
+        <!--<img class="arrow-logos" id="left-arrow" src="images/circular-left-arrow2.png" alt="Left Arrow"> -->
+        <div class="categories-menu-wrapper">
+          <button class="scroll scroll-left">&#9664;</button>
+          <ul class="categories-menu">
             <li id="recent-releases-btn">Recent Releases</li>
             <li id="popular-btn">Popular</li>
             <li id="a-z-btn">A-Z</li>
-            <li id="my-list-btn">My List</li>
-            <li id="rewatch-btn">Rewatch</li>
-            <li id="kids-btn">Kids</li>
             <li id="action-btn">Action</li>
             <li id="comedy-btn">Comedy</li>
             <li id="romance-btn">Romance</li>
@@ -77,7 +76,10 @@ redirected to the sign in page. -->
             <li id="fiction-btn">Fiction</li>
             <li id="non-fiction-btn">Non-Fiction</li>
           </ul>
-        <img class="arrow-logos" id="right-arrow" src="images/circular-right-arrow2.png" alt="Right Arrow">
+          <button class="scroll scroll-right" >&#9654;</button>
+        </div>
+        
+        <!--<img class="arrow-logos" id="right-arrow" src="images/circular-right-arrow2.png" alt="Right Arrow"> -->
         <!-- Category Title, Featured page as default/example, taken from database based on what is currently searched -->
         <h1>Featured</h1>
         <!-- list of movies-->
@@ -98,30 +100,6 @@ redirected to the sign in page. -->
         <br> &copy; Team 18
     </span>
   </footer>
-  <script>
-  function populateMovies() {
-    var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
-
-    $.get(url, function(data, status) {
-      var movies = data.results.slice(0,6);
-      var movieList = "";
-
-      for (var i = 0; i < movies.length; i++) {
-        console.log(movies[i].poster_path)
-        movieList += '<div class="movie-item ">';
-        // need help getting the following line to work
-        movieList += '<img src="' + movies[i].poster_path + '"></img>'
-        movieList += '<h2>' + movies[i].title + '</h2>';
-        movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
-        movieList += '<p> Overview: ' + movies[i].overview + '</p>';
-        movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
-        movieList += '</div>';
-      }
-
-      $("#movie-list").html(movieList);
-    }
-  )}
-  </script>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
   <script src="Firebase_Auth_API.js"></script>

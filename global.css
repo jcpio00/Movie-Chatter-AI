@@ -15,6 +15,7 @@ nav {
     height: 9vh;
     background-color: #333366;
     color: #DFE9FF;
+    z-index: 1;
 }
 nav a {
     color: inherit;
@@ -31,13 +32,83 @@ nav a:hover {
 .account-nav {
     
 }
+/* MOVIE LIST CSS */
+
+.categories-menu-wrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.categories-menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.categories-menu li {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.categories-menu li:hover {
+  color: red;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #fff;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.scroll-left {
+  left: 0;
+}
+
+.scroll-right {
+  right: 0;
+}
+
+.categories-menu-wrapper .scroll-left,
+.categories-menu-wrapper .scroll-right {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+ 
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: left 0.3s ease-out, right 0.3s ease-out;
+}
+
+
+
+
+
 /* Remove when ChatGBT AI is added */
 #call-to-action {
     display: none;
-}
-.arrow-logos {
-    height: 50px;
-    padding: 10px;
 }
 #left-arrow {
     
@@ -45,15 +116,7 @@ nav a:hover {
 #right-arrow {
     
 }
-.categories-menu {
-    display: inline;
-}
-.categories-menu li {
-    display: inline;
-    padding-left: 5px;
-    padding-right: 10px;
-    font-size: 1.1em;
-}
+
 main {
     background-color: #DFE9FF;
     color: #333366;
@@ -122,6 +185,7 @@ footer {
     color: inherit;
     text-decoration: none;
     font-size: 2vh;
+    
 }
 
 .dropdown-toggle {
@@ -133,6 +197,7 @@ footer {
   background-color: #333366;
   cursor: pointer;
   background: none;
+ 
 }
 
 .dropdown-menu {
@@ -144,6 +209,7 @@ footer {
   border: 2px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   min-width: 180px;
+  
 }
 
 .dropdown-menu a {
@@ -151,14 +217,17 @@ footer {
   padding: 5px;
   text-decoration: none;
   color: #333366;
+  
 }
 
 .dropdown-menu a:hover {
   background-color: #DFE9FF;
+  
 }
 
 .show {
   display: block;
+  
 }
 
 
