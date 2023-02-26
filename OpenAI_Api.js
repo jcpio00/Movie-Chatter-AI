@@ -49,65 +49,47 @@ $(document).ready(function() {
       case "Action":
           genreId = 28;
           break;
-        case "Adventure":
-          genreId = 12;
-          break;
-        case "Animation":
-          genreId = 16;
-          break;
         case "Comedy":
           genreId = 35;
           break;
-        case "Crime":
-          genreId = 80;
+        case "Romance":
+          genreId = 10749;
           break;
-        case "Documentary":
-          genreId = 99;
+        case "Musical":
+          genreId = 10402;
           break;
         case "Drama":
           genreId = 18;
           break;
-        case "Family":
-          genreId = 10751;
-          break;
-        case "Fantasy":
-          genreId = 14;
-          break;
-        case "History":
-          genreId = 36;
+        case "Thriller":
+          genreId = 53;
           break;
         case "Horror":
           genreId = 27;
           break;
-        case "Music":
-          genreId = 10402;
+        case "Crime":
+          genreId = 80;
           break;
-        case "Mystery":
-          genreId = 9648;
+        case "Documentaries":
+          genreId = 99;
           break;
-        case "Romance":
-          genreId = 10770;
+        case "Fantasy":
+          genreId = 14;
           break;
-        case "SciFi":
+        case "Sci-Fi":
           genreId = 878;
           break;
-        case "Thriller":
-          genreId = 53;
+        case "Animation":
+          genreId = 16;
           break;
-        case "War":
-          genreId = 10752;
+        case "Fiction":
+          genreId = 9648;
           break;
-        case "Western":
-          genreId = 37;
-          break;
-          case "Popular":
-          genreId = 18;
-          break;
-          case "Recent Releases":
-          genreId = 53;
+        case "Non-Fiction":
+          genreId = 36;
           break;
         default:
-          genreId = 28;
+          genreId = randomGenreId;
       }
     });
   });
@@ -141,7 +123,7 @@ $(document).ready(function() {
             var trailerUrl = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + API_KEY;
             $.get(trailerUrl, function(data, status) {
               var trailerKey = data.results[0].key;
-              var trailerHtml = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + trailerKey + '" frameborder="0" allowfullscreen></iframe>';
+              var trailerHtml = '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/' + trailerKey + '" frameborder="0" allowfullscreen></iframe>';
               $("#"+movieId+" .trailer-container").html(trailerHtml);
             });
           }, function() {
