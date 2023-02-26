@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const liList = document.querySelectorAll('.categories-menu li');
     liList.forEach((li) => {
       li.addEventListener('mouseover', () => {
-        li.style.color = 'red';
+        li.style.color = '#8096ff';
       });
       li.addEventListener('mouseout', () => {
         li.style.color = 'inherit';

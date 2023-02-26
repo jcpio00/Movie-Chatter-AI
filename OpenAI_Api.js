@@ -49,44 +49,56 @@ $(document).ready(function() {
       case "Action":
           genreId = 28;
           break;
-        case "Comedy":
-          genreId = 35;
-          break;
-        case "Romance":
-          genreId = 10749;
-          break;
-        case "Musical":
-          genreId = 10402;
-          break;
-        case "Drama":
-          genreId = 18;
-          break;
-        case "Thriller":
-          genreId = 53;
-          break;
-        case "Horror":
-          genreId = 27;
-          break;
-        case "Crime":
-          genreId = 80;
-          break;
-        case "Documentaries":
-          genreId = 99;
-          break;
-        case "Fantasy":
-          genreId = 14;
-          break;
-        case "Sci-Fi":
-          genreId = 878;
+        case "Adventure":
+          genreId = 12;
           break;
         case "Animation":
           genreId = 16;
           break;
-        case "Fiction":
+        case "Comedy":
+          genreId = 35;
+          break;
+        case "Crime":
+          genreId = 80;
+          break;
+        case "Documentary":
+          genreId = 99;
+          break;
+        case "Drama":
+          genreId = 18;
+          break;
+        case "Family":
+          genreId = 10751;
+          break;
+        case "Fantasy":
+          genreId = 14;
+          break;
+        case "History":
+          genreId = 36;
+          break;
+        case "Horror":
+          genreId = 27;
+          break;
+        case "Music":
+          genreId = 10402;
+          break;
+        case "Mystery":
           genreId = 9648;
           break;
-        case "Non-Fiction":
-          genreId = 36;
+        case "Romance":
+          genreId = 10770;
+          break;
+        case "SciFi":
+          genreId = 878;
+          break;
+        case "Thriller":
+          genreId = 53;
+          break;
+        case "War":
+          genreId = 10752;
+          break;
+        case "Western":
+          genreId = 37;
           break;
           case "Popular":
           genreId = 18;
@@ -95,44 +107,28 @@ $(document).ready(function() {
           genreId = 53;
           break;
         default:
-          genreId = randomGenreId;
-    }
-
-    loadMovies(genreId);
-  });
-});
-
-function loadMovies(genreId) {
-  var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
-  var favorites = [];
-
-  $.get(url, function(data, status) {
-    var movies = data.results.slice(0, 10);
-    var movieList = "";
-
-    for (var i = 0; i < movies.length; i++) {
-      console.log(movies[i].poster_path);
-      movieList += '<div class="movie-item" id="' + movies[i].id + '">';
-      movieList += '<img src="https://image.tmdb.org/t/p/w500' + movies[i].poster_path + '">';
-      movieList += '<h2>' + movies[i].title + '</h2>';
-      movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
-      movieList += '<p> Overview: ' + movies[i].overview + '</p>';
-      movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
-      movieList += '<button class="favorite-button">Favorite</button>';
-      movieList += '<div class="trailer-container"></div>';
-      movieList += '</div>';
-    }
-
-    $("#movie-grid").html(movieList);
-
-    $(".movie-item").hover(function() {
-      var movieId = $(this).attr("id");
-
-      var trailerUrl = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + API_KEY;
-      $.get(trailerUrl, function(data, status) {
-        var trailerKey = data.results[0].key;
-        var trailerHtml = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + trailerKey + '" frameborder="0" allowfullscreen></iframe>';
-        $("#"+movieId+" .trailer-container").html(trailerHtml);
+          genreId = 28;
+      }
+  
+      var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+  
+      $.get(url, function(data, status) {
+        var movies = data.results.slice(0,6);
+        var movieList = "";
+  
+        for (var i = 0; i < movies.length; i++) {
+          console.log(movies[i].poster_path)
+          movieList += '<div class="movie-item ">';
+          // need help getting the following line to work
+          movieList += '<img src="' + movies[i].poster_path + '"></img>'
+          movieList += '<h2>' + movies[i].title + '</h2>';
+          movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
+          movieList += '<p> Overview: ' + movies[i].overview + '</p>';
+          movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
+          movieList += '</div>';
+        }
+  
+        $("#movie-list").html(movieList);
       });
     }, function() {
       $(this).find(".trailer-container").html("");
