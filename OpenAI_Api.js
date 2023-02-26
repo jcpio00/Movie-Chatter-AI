@@ -109,47 +109,58 @@ $(document).ready(function() {
         default:
           genreId = 28;
       }
-  
-      var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
-  
-      $.get(url, function(data, status) {
-        var movies = data.results.slice(0,6);
-        var movieList = "";
-  
-        for (var i = 0; i < movies.length; i++) {
-          console.log(movies[i].poster_path)
-          movieList += '<div class="movie-item ">';
-          // need help getting the following line to work
-          movieList += '<img src="' + movies[i].poster_path + '"></img>'
-          movieList += '<h2>' + movies[i].title + '</h2>';
-          movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
-          movieList += '<p> Overview: ' + movies[i].overview + '</p>';
-          movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
-          movieList += '</div>';
-        }
-  
-        $("#movie-list").html(movieList);
-      });
-    }, function() {
-      $(this).find(".trailer-container").html("");
-    });
-
-    $(".favorite-button").click(function() {
-      var movieId = $(this).closest(".movie-item").attr("id");
-      if (favorites.includes(movieId)) {
-        favorites = favorites.filter(function(favorite) {
-          return favorite !== movieId;
-        });
-        $(this).text("Favorite");
-      } else {
-        favorites.push(movieId);
-        $(this).text("Unfavorite");
-      }
-      console.log("Favorites: " + favorites);
     });
   });
-}
-
-
-
-
+  
+      function loadMovies(genreId) {
+        var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+        var favorites = [];
+      
+        $.get(url, function(data, status) {
+          var movies = data.results.slice(0, 10);
+          var movieList = "";
+      
+          for (var i = 0; i < movies.length; i++) {
+            console.log(movies[i].poster_path);
+            movieList += '<div class="movie-item" id="' + movies[i].id + '">';
+            movieList += '<img src="https://image.tmdb.org/t/p/w500' + movies[i].poster_path + '">';
+            movieList += '<h2>' + movies[i].title + '</h2>';
+            movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
+            movieList += '<p> Overview: ' + movies[i].overview + '</p>';
+            movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
+            movieList += '<button class="favorite-button">Favorite</button>';
+            movieList += '<div class="trailer-container"></div>';
+            movieList += '</div>';
+          }
+      
+          $("#movie-grid").html(movieList);
+      
+          $(".movie-item").hover(function() {
+            var movieId = $(this).attr("id");
+      
+            var trailerUrl = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + API_KEY;
+            $.get(trailerUrl, function(data, status) {
+              var trailerKey = data.results[0].key;
+              var trailerHtml = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + trailerKey + '" frameborder="0" allowfullscreen></iframe>';
+              $("#"+movieId+" .trailer-container").html(trailerHtml);
+            });
+          }, function() {
+            $(this).find(".trailer-container").html("");
+          });
+      
+          $(".favorite-button").click(function() {
+            var movieId = $(this).closest(".movie-item").attr("id");
+            if (favorites.includes(movieId)) {
+              favorites = favorites.filter(function(favorite) {
+                return favorite !== movieId;
+              });
+              $(this).text("Favorite");
+            } else {
+              favorites.push(movieId);
+              $(this).text("Unfavorite");
+            }
+            console.log("Favorites: " + favorites);
+          });
+        });
+      }
+      
