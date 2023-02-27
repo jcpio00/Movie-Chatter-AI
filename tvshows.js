@@ -28,127 +28,121 @@ function getResponse() {
     });
   }
 
-  // search for movies based on a chosen genre using the TMDB API.
+  // search for shows based on a chosen genre using the TMDB API.
 
   var API_KEY = "5de60d88a55b9fbc648230694f21dd37";
 
-  var genreIds = [28, 35, 10752, 10402, 18, 53, 27, 80, 99, 14, 878, 16, 9648, 36, 12, 10751, 10770, 37];
+  var genreIds = [10759, 16, 35, 80, 99, 18, 10751, 10762, 9648, 10763, 10764, 10765, 10766, 10767, 10768, 37];
   // generates a random genre ID
   var randomGenreId = genreIds[Math.floor(Math.random() * genreIds.length)];
 
 $(document).ready(function() {
-    // Load movies on page load
-    loadMovies(randomGenreId);
+    // Load shows on page load
+    loadShows(randomGenreId);
 
-    // Change displayed movies on category click
+    // Change displayed shows on category click
     $(".categories-menu li").click(function() {
     var selectedCategory = $(this).text();
 
     // Get the genre id for the selected category
     switch (selectedCategory) {
-      case "Action":
-        loadMovies(28);
-        break;
-      case "Adventure":
-        loadMovies(12);
+      case "Action/Adventure":
+        loadShows(10759);
         break;
       case "Animation":
-        loadMovies(16);
+        loadShows(16);
         break;
       case "Comedy":
-        loadMovies(35);
+        loadShows(35);
         break;
       case "Crime":
-        loadMovies(80);
+        loadShows(80);
         break;
       case "Documentary":
-        loadMovies(99);
+        loadShows(99);
         break;
       case "Drama":
-        loadMovies(18);
+        loadShows(18);
         break;
       case "Family":
-        loadMovies(10751);
+        loadShows(10751);
         break;
-      case "Fantasy":
-        loadMovies(14);
-        break;
-      case "History":
-        loadMovies(36);
-        break;
-      case "Horror":
-        loadMovies(27);
-        break;
-      case "Music":
-        loadMovies(10402);
+      case "Kids":
+        loadShows(10762);
         break;
       case "Mystery":
-        loadMovies(9648);
+        loadShows(9648);
         break;
-      case "Romance":
-        loadMovies(10770);
+      case "News":
+        loadShows(10763);
         break;
-      case "SciFi":
-        loadMovies(878);
+      case "Reality":
+        loadShows(10764);
         break;
-      case "Thriller":
-        loadMovies(53);
+      case "Scifi/Fantasy":
+        loadShows(10765);
         break;
-      case "War":
-        loadMovies(10752);
+      case "Soap":
+        loadShows(10766);
+        break;
+      case "Talk":
+        loadShows(10767);
+        break;
+      case "War/Politics":
+        loadShows(10768);
         break;
       case "Western":
-        loadMovies(37);
+        loadShows(37);
         break;
       default:
-        loadMovies(28);
+        loadShows(10759);
     }
   });
   
-      function loadMovies(genreId) {
-        var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY + "&with_genres=" + genreId;
+      function loadShows(genreId) {
+        var url = "https://api.themoviedb.org/3/discover/tv?api_key=" + API_KEY + "&with_genres=" + genreId;
         var favorites = [];
       
         $.get(url, function(data, status) {
-          var movies = data.results;
-          var movieList = "";
+          var shows = data.results;
+          var showsList = "";
       
-          for (var i = 0; i < movies.length; i++) {
-            movieList += '<div class="movie-item" id="' + movies[i].id + '">';
-            movieList += '<img src="https://image.tmdb.org/t/p/w500' + movies[i].poster_path + '">';
-            movieList += '<h2>' + movies[i].title + '</h2>';
-            movieList += '<p> Release Date: ' + movies[i].release_date + '</p>';
-            movieList += '<p> Overview: ' + movies[i].overview + '</p>';
-            movieList += '<p> Vote Average: ' + movies[i].vote_average + '</p>';
-            movieList += '<button class="favorite-button">Favorite</button>';
-            movieList += '<div class="trailer-container"></div>';
-            movieList += '</div>';
+          for (var i = 0; i < shows.length; i++) {
+            showsList += '<div class="tvshow-item" id="' + shows[i].id + '">';
+            showsList += '<img src="https://image.tmdb.org/t/p/w500' + shows[i].poster_path + '">';
+            showsList += '<h2>' + shows[i].name + '</h2>';
+            showsList += '<p> Release Date: ' + shows[i].first_air_date + '</p>';
+            showsList += '<p> Overview: ' + shows[i].overview + '</p>';
+            showsList += '<p> Vote Average: ' + shows[i].vote_average + '</p>';
+            showsList += '<button class="favorite-button">Favorite</button>';
+            showsList += '<div class="trailer-container"></div>';
+            showsList += '</div>';
           }
       
-          $("#movie-grid").html(movieList);
+          $("#tvshow-grid").html(showsList);
       
-          $(".movie-item").hover(function() {
-            var movieId = $(this).attr("id");
+          $(".tvshow-item").hover(function() {
+            var showId = $(this).attr("id");
       
-            var trailerUrl = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + API_KEY;
+            var trailerUrl = "https://api.themoviedb.org/3/tv/" + showId + "/videos?api_key=" + API_KEY;
             $.get(trailerUrl, function(data, status) {
               var trailerKey = data.results[0].key;
               var trailerHtml = '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/' + trailerKey + '" frameborder="0" allowfullscreen></iframe>';
-              $("#"+movieId+" .trailer-container").html(trailerHtml);
+              $("#"+showId+" .trailer-container").html(trailerHtml);
             });
           }, function() {
             $(this).find(".trailer-container").html("");
           });
       
           $(".favorite-button").click(function() {
-            var movieId = $(this).closest(".movie-item").attr("id");
-            if (favorites.includes(movieId)) {
+            var showId = $(this).closest(".show-item").attr("id");
+            if (favorites.includes(showId)) {
               favorites = favorites.filter(function(favorite) {
-                return favorite !== movieId;
+                return favorite !== showId;
               });
               $(this).text("Favorite");
             } else {
-              favorites.push(movieId);
+              favorites.push(showId);
               $(this).text("Unfavorite");
             }
             console.log("Favorites: " + favorites);
