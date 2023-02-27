@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuWrapper = document.querySelector('.categories-menu-wrapper');
     const menu = menuWrapper.querySelector('.categories-menu');
-    const scrollLeftBtn = menuWrapper.querySelector('.scroll-left');
     const scrollRightBtn = menuWrapper.querySelector('.scroll-right');
+    const scrollLeftBtn = menuWrapper.querySelector('.scroll-left');
   
     let scrollAmount = 0;
     const step = 5;
     const delay = 10;
     let timer;
   
-    const startScrollLeft = () => {
+    const startScrollRight = () => {
       stopScroll();
       timer = setInterval(() => {
         scrollAmount += step;
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, delay);
     };
   
-    const startScrollRight = () => {
+    const startScrollLeft = () => {
       stopScroll();
       timer = setInterval(() => {
         scrollAmount -= step;

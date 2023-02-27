@@ -37,61 +37,72 @@ function getResponse() {
   var randomGenreId = genreIds[Math.floor(Math.random() * genreIds.length)];
 
 $(document).ready(function() {
-  // Load movies on page load
-  loadMovies(randomGenreId);
+    // Load movies on page load
+    loadMovies(randomGenreId);
 
-  // Change displayed movies on category click
-  $(".categories-menu li").click(function() {
+    // Change displayed movies on category click
+    $(".categories-menu li").click(function() {
     var selectedCategory = $(this).text();
 
     // Get the genre id for the selected category
     switch (selectedCategory) {
       case "Action":
-          genreId = 28;
-          break;
-        case "Comedy":
-          genreId = 35;
-          break;
-        case "Romance":
-          genreId = 10749;
-          break;
-        case "Musical":
-          genreId = 10402;
-          break;
-        case "Drama":
-          genreId = 18;
-          break;
-        case "Thriller":
-          genreId = 53;
-          break;
-        case "Horror":
-          genreId = 27;
-          break;
-        case "Crime":
-          genreId = 80;
-          break;
-        case "Documentaries":
-          genreId = 99;
-          break;
-        case "Fantasy":
-          genreId = 14;
-          break;
-        case "Sci-Fi":
-          genreId = 878;
-          break;
-        case "Animation":
-          genreId = 16;
-          break;
-        case "Fiction":
-          genreId = 9648;
-          break;
-        case "Non-Fiction":
-          genreId = 36;
-          break;
-        default:
-          genreId = randomGenreId;
-      }
-    });
+        loadMovies(28);
+        break;
+      case "Adventure":
+        loadMovies(12);
+        break;
+      case "Animation":
+        loadMovies(16);
+        break;
+      case "Comedy":
+        loadMovies(35);
+        break;
+      case "Crime":
+        loadMovies(80);
+        break;
+      case "Documentary":
+        loadMovies(99);
+        break;
+      case "Drama":
+        loadMovies(18);
+        break;
+      case "Family":
+        loadMovies(10751);
+        break;
+      case "Fantasy":
+        loadMovies(14);
+        break;
+      case "History":
+        loadMovies(36);
+        break;
+      case "Horror":
+        loadMovies(27);
+        break;
+      case "Music":
+        loadMovies(10402);
+        break;
+      case "Mystery":
+        loadMovies(9648);
+        break;
+      case "Romance":
+        loadMovies(10770);
+        break;
+      case "SciFi":
+        loadMovies(878);
+        break;
+      case "Thriller":
+        loadMovies(53);
+        break;
+      case "War":
+        loadMovies(10752);
+        break;
+      case "Western":
+        loadMovies(37);
+        break;
+      default:
+        loadMovies(28);
+    }
   });
   
       function loadMovies(genreId) {
@@ -144,5 +155,5 @@ $(document).ready(function() {
             console.log("Favorites: " + favorites);
           });
         });
-      }
-      
+      };
+});
